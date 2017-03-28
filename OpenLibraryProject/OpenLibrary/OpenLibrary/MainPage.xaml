@@ -23,13 +23,9 @@
                     <AppBarButton x:Name="Exit" Label="Exit" />
                 </CommandBar.SecondaryCommands>
 
-                <AppBarButton x:Name ="addButton" Icon="Add" Label="Add"/>
-                <AppBarButton x:Name="saveButton" Icon="Save" Label="Save" IsEnabled="false"/>
-                <AppBarButton x:Name="editButton" Icon="Edit" Label="Edit" IsEnabled="false"/>
-                <AppBarSeparator d:LayoutOverrides="Width, Height"/>
-                <AppBarButton x:Name="deleteButton" Icon="Delete" Label="Delete" IsEnabled="false"/>
+            <AppBarSeparator d:LayoutOverrides="Width, Height"/>
 
-                <CommandBar.Content>
+            <CommandBar.Content>
                     <TextBlock Name="noteTitleTextBlock" Text="placeholder" Margin="15">
                     </TextBlock>
                 </CommandBar.Content>
