@@ -7,50 +7,58 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-            <DataTemplate x:Key="OpenLibraryModelTemplate">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="title placeholder" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                </StackPanel>
-            </DataTemplate>
-        </Page.Resources>
-        <Page.DataContext>
-            <local:MainPageData/>
-        </Page.DataContext>
-        <Page.TopAppBar>
-            <CommandBar>
-                <CommandBar.SecondaryCommands>
-                    <AppBarButton x:Name="About" Label="About" />
-                    <AppBarButton x:Name="Exit" Label="Exit" />
-                </CommandBar.SecondaryCommands>
+        <DataTemplate x:Key="BookModelTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:MainPageData/>
+    </Page.DataContext>
+
+    <Page.TopAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="About" Label="About" Click="About_Click"/>
+                <AppBarButton x:Name="Exit" Label="Exit" Click="Exit_Click"/>
+            </CommandBar.SecondaryCommands>
 
             <AppBarSeparator d:LayoutOverrides="Width, Height"/>
-
             <CommandBar.Content>
-                    <TextBlock Name="noteTitleTextBlock" Text="placeholder" Margin="15">
-                    </TextBlock>
-                </CommandBar.Content>
-            </CommandBar>
-        </Page.TopAppBar>
+                <TextBlock Name="noteTitleTextBlock" Text="{Binding searchTerm, Mode=TwoWay}" Margin="15"><!--//twoway?-->
+                </TextBlock>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
 
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="320*"/>
-                <ColumnDefinition Width="640*"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="56"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="10" PlaceholderText="Enter search term here..."/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="355*"/>
+            <ColumnDefinition Width="355*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-                <ListView x:Name="listView" Grid.Row="1"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1"/>
+            <Grid Grid.Column="2"/>
 
-            </Grid>
-            <Grid Grid.Column="1">
-                <TextBox x:Name="mainTextBox" TextWrapping="Wrap" Text="{Binding NoteBody, Mode=TwoWay}" IsReadOnly="true"/>
-            </Grid>
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="10,0,0,0" PlaceholderText="Enter search term here..." Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"/>
+            <Button x:Name="button" Content="Search" VerticalAlignment="Top" Margin="200,0,0,0"/>
 
+            <ListView x:Name="listView" ItemTemplate="{StaticResource BookModelTemplate}" ItemsSource="{Binding Books}" Margin="0,50,0,10" Grid.RowSpan="2"/>
         </Grid>
-    </Page>
+        <Grid Grid.Column="1">
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="335" Margin="112,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="259"/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Button x:Name="moreDetailsButton" Content="Click here for more details" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,350,0,0" Click="moreDetailsButton_Click"/>
+        </Grid>
+
+    </Grid>
+</Page>

@@ -26,5 +26,22 @@ namespace OpenLibrary
         {
             this.InitializeComponent();
         }
+
+        private void moreDetailsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DetailsPage));
+
+        }
+
+        private async void About_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutMsg = new Windows.UI.Popups.MessageDialog("Created by \nPaddy Vaughan\nYan Liu\nMinsu Lee\nJoey Gilkie\n©2017");
+            await aboutMsg.ShowAsync();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }
