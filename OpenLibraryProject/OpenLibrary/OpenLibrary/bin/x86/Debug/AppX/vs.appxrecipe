@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Paddy\Desktop\FinalProject-master\FinalProject\OpenLibraryProject\OpenLibrary\OpenLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-29T17:34:53.721</Modified>
+      <Modified>2017-03-29T18:00:14.035</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Paddy\Desktop\FinalProject-master\FinalProject\OpenLibraryProject\OpenLibrary\OpenLibrary\bin\x86\Debug\OpenLibrary.exe">
       <PackagePath>entrypoint\OpenLibrary.exe</PackagePath>
-      <Modified>2017-03-29T17:34:52.510</Modified>
+      <Modified>2017-03-29T18:00:13.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paddy\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -500,7 +500,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Paddy\Desktop\FinalProject-master\FinalProject\OpenLibraryProject\OpenLibrary\OpenLibrary\bin\x86\Debug\Core\OpenLibrary.exe">
       <PackagePath>OpenLibrary.exe</PackagePath>
-      <Modified>2017-03-29T17:34:53.714</Modified>
+      <Modified>2017-03-29T18:00:14.025</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
