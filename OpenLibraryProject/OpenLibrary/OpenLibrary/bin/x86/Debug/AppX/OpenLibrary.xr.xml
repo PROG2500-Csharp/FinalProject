@@ -3,7 +3,13 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="searchTerm" />
+    <RootPropertyPathName Name="displayTitle" />
+    <RootPropertyPathName Name="firstPublishedYear" />
+    <RootPropertyPathName Name="bookAuthorName" />
+    <RootPropertyPathName Name="bookCoverImage" />
     <RootPropertyPathName Name="Books" />
+    <RootPropertyPathName Name="SelectedBook" />
+    <RootPropertyPathName Name="Filter" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -28,9 +34,11 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
     </RootType>
     <RootType FullName="OpenLibrary.MainPageData" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
@@ -79,17 +87,20 @@
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
       <RootProperty Name="RenderTransformOrigin" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="SelectedItem" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="OpenLibrary.MainPage" />

@@ -26,8 +26,8 @@
 
             <AppBarSeparator d:LayoutOverrides="Width, Height"/>
             <CommandBar.Content>
-                <TextBlock Name="noteTitleTextBlock" Text="{Binding searchTerm, Mode=TwoWay}" Margin="15"><!--//twoway?-->
-                </TextBlock>
+                <!--<TextBlock Name="searchDisplayTextBlock" Text="{Binding searchTerm, Mode=TwoWay}" Margin="15"></TextBlock>-->
+                <TextBlock Name="noteTitleTextBlock"  Margin="15" Text="{Binding displayTitle}"></TextBlock>
             </CommandBar.Content>
         </CommandBar>
     </Page.TopAppBar>
@@ -47,16 +47,20 @@
             </Grid.RowDefinitions>
             <Grid Grid.Column="1"/>
             <Grid Grid.Column="2"/>
-
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="10,0,0,0" PlaceholderText="Enter search term here..." Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"/>
+             <!--change to explicit for search button?-->
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="10,0,0,0" PlaceholderText="Enter search term here..." Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Text="{Binding Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button x:Name="button" Content="Search" VerticalAlignment="Top" Margin="200,0,0,0"/>
 
-            <ListView x:Name="listView" ItemTemplate="{StaticResource BookModelTemplate}" ItemsSource="{Binding Books}" Margin="0,50,0,10" Grid.RowSpan="2"/>
+            <ListView x:Name="listView" ItemTemplate="{StaticResource BookModelTemplate}" ItemsSource="{Binding Books}" Margin="0,50,0,10" Grid.RowSpan="2" SelectedItem="{Binding SelectedBook, Mode=TwoWay}"/>
         </Grid>
         <Grid Grid.Column="1">
             <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="335" Margin="112,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="259"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="167,560,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Text="{Binding bookCoverImage, Mode=TwoWay}"/>
         </Grid>
         <Grid Grid.Column="2">
+            <TextBlock x:Name="bookTitleTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="150,450,0,0" VerticalAlignment="Top" Text="{Binding displayTitle}"/>
+            <TextBlock x:Name="bookAuthorTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding bookAuthorName}" Margin="150,475,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="firstPublishedYearTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding firstPublishedYear}" Margin="150,495,0,0" VerticalAlignment="Top" Height="23"/>
             <Button x:Name="moreDetailsButton" Content="Click here for more details" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,350,0,0" Click="moreDetailsButton_Click"/>
         </Grid>
 
