@@ -14,8 +14,6 @@ namespace OpenLibrary
 
         public ObservableCollection<BookModel> Books { get; set; }
 
-
-
         private String _searchTerm = "Placeholder for what was searched";
         private String _displayTitle = "No Book Seleceted";
         private int _firstPublishedYear = 1984;
